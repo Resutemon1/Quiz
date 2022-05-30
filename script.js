@@ -48,10 +48,12 @@ function questaoUm()
   //titulo e nº da questao/resposta da questão
   questaoNumero.innerText = '1';
   questaoTitulo.innerText = 'Quantos palitos tem aqui?';
-  //questaoNumero.onclick(questaoDois());
+ 
   
   // faz tudo aparecer na tela
   questao.style.display = "block";
+   //chama a questão 2
+   questaoNumero.onclick(questaoDois());
 }
 
 // se responder errado ativa essa funçao
@@ -73,3 +75,49 @@ function perdeu()
 }
 
 
+function questaoDois()
+{
+
+  //faz a questao desaparecer
+  
+  questao.style.display = "none";
+  // adiciona + 1 no contador de fases
+  cont++;
+  
+  //encontra as divs por meio das ids
+  let questao = document.getElementById("questaoLayoutDois");
+  let questaoNumero = document.getElementById("numeroIdDois");
+  let questaoTitulo = document.getElementById("tituloIdDois");
+  let alternativaUm = document.getElementById("quadrado5");
+  let alternativaDois = document.getElementById("quadrado6");
+  //let alternativaTres = document.getElementById("quadrado3");
+  //let alternativaQuatro = document.getElementById("quadrado4");
+  
+  // cria e dda id ao palito da questão 1
+  let palito1 = document.createElement("div");
+  palito1.id = 'palito'; 
+
+  //coloca texto nas divs das alternativas
+  alternativaUm.innerText = '2';
+  alternativaDois.innerText = '4';
+  alternativaTres.innerText = '6';
+  alternativaQuatro.innerText = '3';
+
+  //titulo e nº da questao/resposta da questão
+  questaoNumero.innerText = '2';
+  questaoTitulo.innerText = 'questão 2';
+  //chama a questão 3
+  //questaoNumero.onclick(questaoTres());
+  
+  // faz tudo aparecer na tela
+  questao.style.display = "block";
+}
+
+function animarBotaoJogar() {
+  const jogar = document.getElementById('jogar');
+  jogar.className = 'jogarAnimacao';
+}
+function animarBotaoSegredo() {
+  const jogar = document.getElementById('segredo');
+  jogar.className = 'segredoAnimação';
+}
