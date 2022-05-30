@@ -14,45 +14,45 @@
             <!--  coloca função segredo, so coloquei pra marcar o layout-->
             <div id="segredo" onmouseenter="animarBotaoSegredo()" onclick="segredo()">segredo</div>
         </div>
-
         <button onclick="aparece()" id="botaoAparece" style="display: none;">aparece</button>
         
-        <div id="questaoLayoutUm" >
-            <div class="top">
+        <div id="questaoLayout1" >
+            <div class="top" id="topo">
                 <div class="numeroQuestao" id="numeroIdUm"></div>
                 <div class="titulo" id="tituloIdUm"></div>
             </div>
             <div  id="palito"></div>
             <div id="quadradoDeAlternativas">
-                <div onclick="perdeu()" class="alternativa" id="quadrado1"></div>
-                <div onclick="perdeu()" class="alternativa" id="quadrado2"></div>
-                <div onclick="perdeu()" class="alternativa" id="quadrado3"></div>
-                <div onclick="perdeu()" class="alternativa" id="quadrado4"></div>
+                <div  class="alternativa" id="quadrado1"></div>
+                <div  class="alternativa" id="quadrado2"></div>
+                <div  class="alternativa" id="quadrado3"></div>
+                <div  class="alternativa" id="quadrado4"></div>
             </div>
-
+            
+        
         </div>
 
-        <div id="questaoLayoutDois" >
+        <div id="questaoLayout2" >
             <div class="top">
                 <div class="numeroQuestao" id="numeroIdDois"></div>
                 <div class="titulo" id="tituloIdDois"></div>
             </div>
             <div id="quadradoDeAlternativas">
-                <div onclick="perdeu()" class="alternativa" id="quadrado5"></div>
-                <div onclick="perdeu()" class="alternativa" id="quadrado6"></div>
+                <div  class="alternativa" id="quadrado5"></div>
+                <div  class="alternativa" id="quadrado6"></div>
             </div>
 
         </div>
 
-        <div id="questaoLayoutTres" >
+        <div id="questaoLayout3" >
             <div class="top">
                 <div class="numeroQuestao" id="numeroIdTres"></div>
                 <div class="titulo" id="tituloIdTres"></div>
             </div>
             <div id="quadradoDeAlternativas">
-                <div onclick="perdeu()" class="alternativa" id="quadrado7"></div>
-                <div onclick="perdeu()" class="alternativa" id="quadrado8"></div>
-                <div onclick="perdeu()" class="alternativa" id="quadrado9"></div>
+                <div class="alternativa" id="quadrado7"></div>
+                <div class="alternativa" id="quadrado8"></div>
+                <div class="alternativa" id="quadrado9"></div>
             </div>
 
         </div>
@@ -62,8 +62,8 @@
             <a href="index.html"><div onclick="perdeu()">recomeçar</div></a>
         </div>
         
-        
 
+        
         <script src="script.js"></script>
     </body>
 </html>

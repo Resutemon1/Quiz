@@ -1,5 +1,5 @@
 //Esse variavel serve como contador, ele vai contar que fase voce esta
-let cont;
+let cont = 0 ;
 
 
 function jogar()
@@ -23,21 +23,18 @@ function aparece()
 
 function questaoUm()
 {
-  // adiciona + 1 no contador de fases
-  cont++;
+  // Indicando qual layout esta
+  cont = 1;
   
   //encontra as divs por meio das ids
-  let questao = document.getElementById("questaoLayoutUm");
-  let questaoNumero = document.getElementById("numeroIdUm");
-  let questaoTitulo = document.getElementById("tituloIdUm");
-  let alternativaUm = document.getElementById("quadrado1");
-  let alternativaDois = document.getElementById("quadrado2");
-  let alternativaTres = document.getElementById("quadrado3");
-  let alternativaQuatro = document.getElementById("quadrado4");
+  const questao = document.getElementById("questaoLayout1");
+  const questaoNumero = document.getElementById("numeroIdUm");
+  const questaoTitulo = document.getElementById("tituloIdUm");
+  const alternativaUm = document.getElementById("quadrado1");
+  const alternativaDois = document.getElementById("quadrado2");
+  const alternativaTres = document.getElementById("quadrado3");
+  const alternativaQuatro = document.getElementById("quadrado4");
   
-  // cria e dda id ao palito da questão 1
-  let palito1 = document.createElement("div");
-  palito1.id = 'palito'; 
 
   //coloca texto nas divs das alternativas
   alternativaUm.innerText = '2';
@@ -45,10 +42,17 @@ function questaoUm()
   alternativaTres.innerText = '6';
   alternativaQuatro.innerText = '3';
 
+  alternativaUm.onclick = perdeu;
+  alternativaDois.onclick = perdeu;
+  alternativaTres.onclick = perdeu;
+  alternativaQuatro.onclick = perdeu;
+  
+  
+
   //titulo e nº da questao/resposta da questão
   questaoNumero.innerText = '1';
   questaoTitulo.innerText = 'Quantos palitos tem aqui?';
- 
+  questaoNumero.onclick = questaoDois;
   
   // faz tudo aparecer na tela
   questao.style.display = "block";
@@ -59,65 +63,45 @@ function questaoUm()
 // se responder errado ativa essa funçao
 function perdeu()
 {
-  let questao;
+  
   // aqui vai verificar qual questao voce esta, por isso o uso do contador
-  switch(cont)
-  {
-    case 1:
-      questao = document.getElementById("questaoLayoutUm");
-    break;
-  }
+  const  questao = document.getElementById("questaoLayout" + cont);
+  const  aparecerPerdeu = document.getElementById("perdeu");
   //faz a questao desaparecer
-  //não ta rodando isso aq
   questao.style.display = "none";
+  aparecerPerdeu.style.display = "block";
+  
 
  
 }
 
-
 function questaoDois()
 {
+  // Indicando qual layout esta
+  cont = 2;
 
-  //faz a questao desaparecer
-  
-  questao.style.display = "none";
-  // adiciona + 1 no contador de fases
-  cont++;
-  
-  //encontra as divs por meio das ids
-  let questao = document.getElementById("questaoLayoutDois");
-  let questaoNumero = document.getElementById("numeroIdDois");
-  let questaoTitulo = document.getElementById("tituloIdDois");
-  let alternativaUm = document.getElementById("quadrado5");
-  let alternativaDois = document.getElementById("quadrado6");
-  //let alternativaTres = document.getElementById("quadrado3");
-  //let alternativaQuatro = document.getElementById("quadrado4");
-  
-  // cria e dda id ao palito da questão 1
-  let palito1 = document.createElement("div");
-  palito1.id = 'palito'; 
+
+
+  const  questaoUm = document.getElementById("questaoLayout1");
+  const  questaoDois = document.getElementById("questaoLayout2");
+  const questaoNumero = document.getElementById("numeroIdDois");
+  const questaoTitulo = document.getElementById("tituloIdDois");
+  const alternativaUm = document.getElementById("quadrado5");
+  const alternativaDois = document.getElementById("quadrado6");
+
+  //Fazendo questão 1 desaparecer e questão 2 aparecer
+  questaoUm.style.display = 'none';
+  questaoDois.style.display = 'block';
 
   //coloca texto nas divs das alternativas
-  alternativaUm.innerText = '2';
-  alternativaDois.innerText = '4';
-  alternativaTres.innerText = '6';
-  alternativaQuatro.innerText = '3';
-
-  //titulo e nº da questao/resposta da questão
   questaoNumero.innerText = '2';
-  questaoTitulo.innerText = 'questão 2';
-  //chama a questão 3
-  //questaoNumero.onclick(questaoTres());
+  questaoTitulo.innerText = 'Lado esquerdo ao contrario, invertido e virado 180°';
+  alternativaUm.innerText = '<--';
+  alternativaDois.innerText = '-->';
+  alternativaDois.onclick = perdeu;
+
   
-  // faz tudo aparecer na tela
-  questao.style.display = "block";
+  
+
 }
 
-function animarBotaoJogar() {
-  const jogar = document.getElementById('jogar');
-  jogar.className = 'jogarAnimacao';
-}
-function animarBotaoSegredo() {
-  const jogar = document.getElementById('segredo');
-  jogar.className = 'segredoAnimação';
-}
